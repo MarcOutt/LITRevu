@@ -9,11 +9,20 @@
 
     <form id="signup" method="post">
         {% csrf_token %}
-        <input type="text" id="username" name="username">
-        <input type="password" id="password1" name="password1">
-        <input type="password" id="password2" name="password2">
-        <button type="submit" > Retourner</button>
-        <button type="submit" > S'inscrire</button>
+        <div id="username">
+             <input type="text" name="username" placeholder="Nom d'utilisateur">
+        </div>
+       <div class="password">
+           <input type="password" name="password1" placeholder="Mot de passe">
+       </div>
+        <div class="password">
+            <input type="password" name="password2" placeholder="Confirmer mot de passe">
+        </div>
+        <div class="button">
+            <button><a href="{% url 'login' %}">Retourner</a> </button>
+            <button type="submit" > S'inscrire</button>
+        </div>
+
         {% if form.errors %}
         <small> {{ error }} </small>
         {% endif %}

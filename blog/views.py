@@ -43,20 +43,21 @@ class LoginPageView(View):
 
 
 class SignupPageView(View):
-    template_name = 'blog/signup.html'
-    form_class = forms.SignupForm
 
     def get(self, request):
-        form = self.form_class()
-        message = ''
-        return render(request, self.template_name, context={'form': form, 'message': message})
+        return render(request, 'blog/signup.html')
 
     def post(self, request):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            user = form.save()
+        username = request.POST.get('username')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        if password1 != password2:
+            return render(request, 'blog/signup.html', {"error": "Les mots de passe ne correspondent pas"})
+        user = CustomUser.objects.create_user(username=username, password=password1)
+        if user is not None:
             login(request, user)
-            return redirect(settings.LOGIN_REDIRECT_URL)
+            return redirect('flux')
+        return redirect(settings.LOGIN_REDIRECT_URL)
 
 
 class FluxView(ListView):

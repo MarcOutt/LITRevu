@@ -142,13 +142,17 @@ nav h1 {
     text-align: center;
 }
 
-
 #signup input {
-    width: 40%;
+    display: inline flex;
+    width: 60%;
+}
+
+.button {
+    text-align : right;
+    margin-right: 20%;
 }
 
 .helptext {
-    display: inline-block;
     width: 100%;
 }
 
