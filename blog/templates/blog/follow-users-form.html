@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Abonnements</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Suivre des utilisateurs</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" > Confirmer</button>
+    </form>
+{% endblock %}
