@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title> Modifier une critique</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Créer une critique</h2>
+    {% if ticket_form.errors or ticket_form.errors %}
+        {{ ticket_form.errors }}
+        {{ review_form.errors }}
+    {% endif %}
+    <div class="frame">
+        <p>Livre / Article</p>
+     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="title">
+            <label>Titre</label>
+            {{ ticket_form.title}}
+        </div>
+        <div class="description">
+           <label>Description</label>
+            {{ ticket_form.description }}
+        </div>
+        <div class="image">
+             <label>Image</label>
+             {{ ticket_form.image }}
+            {% if ticket_form.image %}
+                <img src="{{ ticket_form.image.url }}">
+            {% endif %}
+        </div>
+
+         {% if review_form %}
+             <hr>
+             <p>Critique</p>
+             <div class="title">
+                 <label>Titre</label>
+                 {{review_form.headline}}
+             </div>
+             <div class="rates">
+                 <label id="title-rates">Note</label>
+                 {{ review_form.rating }}
+             </div>
+             <div class="description">
+               <label>Description</label>
+               {{ review_form.body }}
+
+             </div>
+         {% endif %}
+         <div class="button-create">
+             <button type="submit" >Envoyer</button>
+         </div>
+    </form>
+    </div>
+
+{% endblock %}
+
+

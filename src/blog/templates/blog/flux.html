@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Flux</title>
+{% endblock %}
+
+{% block content %}
+    <div class="flux">
+        <div id="askTicket">
+           <a  href="{% url 'ticket-create' %}"> Demander une critique</a>
+        </div>
+        <div id="createTicket">
+            <a  href="{% url 'review-create' %}"> Créer une critique</a>
+        </div>
+        {% for ticket in tickets %}
+            <div class="frame">
+                {% if ticket.review.all %}
+                    {% for review in ticket.review.all %}
+                        {% if request.user.username == review.user.username %}
+                            <p> Vous avez publié une critique</p>
+                        {% else %}
+                            <p>{{ review.user.username }} a créer une critique</p>
+                        {% endif %}
+                        <p class="time">{{ review.time_created }} {{ ticket.time_created }}</p>
+                        <h3>{{ review.headline }}</h3>
+                        {% if review.rating %}
+                            (Note : {{ review.rating }})
+                        {% endif %}
+                        <p>{{ review.body }}</p>
+                        <div class="frame-ticket">
+                            <p>Ticket - {{ ticket.user.username }}</p>
+                            <p>{{ ticket.title }}</p>
+                            {% if ticket.image %}
+                            <img src="{{ ticket.image.url }}" alt="{{ ticket.title }}">
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% if request.user.username == ticket.user.username %}
+                        <p> Vous avez publié une critique</p>
+                    {% else %}
+                        <p>{{ ticket.user.username }} a demandé une critique</p>
+                    {% endif %}
+                    <p class="time">{{ ticket.time_created }}</p>
+                    <h1>{{ ticket.title }}</h1>
+                    <p>{{ ticket.description }}</p>
+                    {% if ticket.image %}
+                        <img src="{{ ticket.image.url }}" alt="{{ ticket.title }}">
+                    {% endif %}
+                    {% if request.user.username != ticket.user.username %}
+                        <button class="response"><a href="{% url 'ticket-response' ticket.id %}">Créer une critique</a></button>
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

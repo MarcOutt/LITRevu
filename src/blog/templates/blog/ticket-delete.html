@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title> Créer un ticket</title>
+{% endblock %}
+
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p class="delete">Voulez-vous supprimer "{{ ticket.title }}"</p>
+        <button class="button-delete"><a href="{% url 'posts' %}">Retour</a></button>
+        <button class="button-delete" type="submit" value="Supprimer">Supprimer</button>
+
+    </form>
+
+{% endblock %}

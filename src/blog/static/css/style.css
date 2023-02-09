@@ -1,0 +1,342 @@
+@import "reset.css";
+
+
+body {
+    background-color : black;
+    color:white;
+}
+
+.blog
+{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label{
+    margin-top: 10px;
+    display:inline-block;
+    text-align: left;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom : 30px;
+}
+
+img {
+    display: block;
+    margin-left : 10px;
+    width:40%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 30 px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 1em 2.5em;
+    border-radius: 10px;
+}
+
+button a{
+    color: black;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: dark-grey;
+}
+
+input {
+    display: flex;
+    width: 90%;
+    text-align: center;
+    margin-top : 10px;
+    margin-bottom : 20px;
+    height: 40px;
+
+}
+
+textarea {
+display: flex;
+    width: 100%;
+    height: 200px;
+    margin-top: 15px
+}
+
+/* Barre de navigation */
+nav {
+    width : 100%;
+    background-color: black;
+    text-align: center;
+    font-size: 35px;
+    margin-top : 20px;
+    margin-bottom : 20px;
+    padding-top : 20px;
+    padding-bottom : 20px;
+    border-top : 2px solid white;
+    border-bottom : 2px solid white;
+}
+
+nav h1 {
+    display: inline-block;
+    width : 49%;
+    text-align: right;
+}
+
+.nav {
+    display: inline-block;
+    width: 39%;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.nav a {
+    font-size: 20px;
+}
+
+/* Login */
+
+#login-title {
+    text-align: center;
+}
+
+.subscribe {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 70px;
+}
+
+.subscribe h2 {
+    font-size: 30px;
+}
+
+.subscribe button {
+    margin-bottom: 1500px;
+}
+
+.signin {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+
+.signin h2 {
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom : 30px;
+}
+
+.signin button {
+    position: relative;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+/* Inscription */
+#signup {
+    text-align: center;
+}
+
+#signup input {
+    display: inline flex;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    text-align : right;
+    margin-right: 20%;
+}
+
+.helptext {
+    width: 100%;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+/* flux */
+.flux {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    font-size: 30px;
+}
+
+.frame{
+    border: 1px solid white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 1px;
+}
+
+.frame-ticket {
+    border: 1px solid white;
+    margin : 10px;
+    padding: 20px 1px 10px 1px;
+}
+
+.flux p {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+p.time {
+    text-align: right;
+    font-size: small;
+    margin: 0 20px;
+    padding: 0;
+}
+
+h3 {
+    margin: 10px 1px;
+}
+
+#askTicket, #createTicket{
+    display: inline-block;
+    width: 39%;
+    margin-bottom: 40px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 15px;
+}
+
+#edit, #delete{
+    font-size : 20px;
+    display: inline-block;
+    width: 10%;
+    margin-bottom: 40px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 15px;
+}
+
+/* ticket-create */
+
+.title, .description {
+    display: block;
+}
+
+.title input, .description textarea, .image input {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.title label, .description label, .image label {
+    text-align: left;
+    margin-left: 5%;
+    }
+
+.button-create {
+    display: block;
+}
+
+.button-create button {
+    float: right;
+}
+
+/* review-create */
+
+.rates label {
+    margin-right: 50px;
+}
+
+#title-rates {
+    text-align:left;
+    margin-left: 47px;
+    width: 100%;
+}
+input[type="radio"] {
+  display: inline-block;
+  height: 10px;
+  padding-top: 40px;
+}
+
+#radio {
+    margin-left: 60px;
+}
+
+/* ticket-delete */
+
+.delete {
+
+    margin-top: 55px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.button-delete {
+    margin-top: 55px;
+    display: flex;
+    float:right;
+    margin-right: 35px;
+}
+
+/* follow-users */
+form.search {
+    display: inline-block;
+    width: 100%;
+}
+
+.search_bar {
+    display: inline-block;
+    width: 82%;
+    height: 5px;
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+
+.following {
+    display: inline-block;
+    text-align: right;
+}
+
+.subscribe button {
+    display: inline-block;
+    margin: 0;
+}
+
+td {
+    border: 1px solid white;
+    padding: 4px;
+    height: 20px;
+}
+
+td.follow-name{
+    width: 93%;
+}
+
+button.unfollow {
+    border-radius: 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 6px 6px;
+}
+
+.followers {
+    width: 900px;
+}
