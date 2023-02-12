@@ -16,12 +16,12 @@
 
 * Ce projet consite à créer un site Web pour la société LITRevview. Le but de l'application Web est de permettre aux utilisateurs de demander ou ûblier des critique de livres ou d'articles.
 
-L'application présente deux cas d'utilisation principaux:
+L'application présente deux cas d'utilisation principaux:  
   1.Les personnes qui demandent des critiques sur un livre ou sur un article particulier ;
   2.Les personnes qui recherchent des articles et des livres intéressants à lire, en se basant sur les critiques des autres.
   
-Cahier des charges:
-Un utilisateur devra pouvoir :
+Cahier des charges:  
+Un utilisateur devra pouvoir :  
 * se connecter et s’inscrire – le site ne doit pas être accessible à un utilisateur non connecté
 * consulter un flux contenant les derniers tickets et les commentaires des utilisateurs qu'il suit, classés par ordre chronologique, les plus récents en premier ; 
 * créer de nouveaux tickets pour demander une critique sur un livre/article ;
@@ -54,42 +54,57 @@ Le projet utilise les langages HTML, CSS et Python.
 * Sous Linux:
     Ouvrir l'invite de commande : ```Ctrl + Alt + T```
 * Il est préférable d'utiliser un environnement virtuel, pour l'installer:
+
     ```bash
 pip install venv
 ```
+
 * Créer un dossier au nom de l'application avec mkdir
+
     ```bash
 mkdir/LITReview
 ```
+
 * Aller dans le dossier crée:
+
     ```bash
 cd/Litreview
 ```
 
-LINUX MACOS
+**LINUX MACOS
 * Créer votre environnement virtuel:
+
 ```bash
 python3.xx -m venv .env
 ```
+
 * Sourcer l'environnement virtuel:
+
 ```bash
 source env/bin/activate
 ```
+
 * Installer la configuration à l'aide du fichier requirements.txt:
+
 ```bash
 pip install -r requirement.txt
 ```
 
-WINDOWS
+**WINDOWS
 * Créer votre environnement virtuel:
+
 ```bash
 python -m venv env
 ```
+
 * Sourcer cette environnement virtuel:
+
 ```bash
 source env/Scripts/activate
 ```
+
 * Installer la configuration à l'aide du fichier requirements.txt:
+
 ```bash
 pip install -r requirement.txt
 ```
@@ -106,11 +121,11 @@ python manage.py runserver
 ```
 * Entrer l'adresse suivante dans votre navigateur pour acceder au site : http:/127.0.0.1:8000/
 
-A revoir 
-Afin de tester les différentes fonctionalités du site, 3 comptes utilisateurs ont été créés : "Jean", "Severine" et "Sarah".
+
+Afin de tester les différentes fonctionalités du site, 3 comptes utilisateurs ont été créés : "Jean", "Severine" et "Sarah".  
 Le mot de passe est identique pour les 3 : "hello1234" (sans les guillemets).
 
-Pour acceder à l'interface d'administration: via le compte "admin", mot de passe "admin" (sans les guillemets).
+Pour acceder à l'interface d'administration: via le compte "admin", mot de passe "admin" (sans les guillemets):
 * Aller sur http:/127.0.0.1:8000/admin
 * Nom du compte: admin
 * Mot de passe: admin
