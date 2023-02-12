@@ -14,14 +14,15 @@
 ## INTRODUCTION
 ----------------
 
-* Ce projet consite à créer un site Web pour la société LITRevview. Le but de l'application Web est de permettre aux utilisateurs de demander ou ûblier des critique de livres ou d'articles.
+Ce projet consite à créer un site Web pour la société LITRevview. Le but de l'application Web est de permettre aux utilisateurs de demander ou ûblier des critique de livres ou d'articles.  
 
 L'application présente deux cas d'utilisation principaux:  
   1.Les personnes qui demandent des critiques sur un livre ou sur un article particulier ;
   2.Les personnes qui recherchent des articles et des livres intéressants à lire, en se basant sur les critiques des autres.
   
-Cahier des charges:  
-Un utilisateur devra pouvoir :  
+Cahier des charges:
+
+*Un utilisateur devra pouvoir : * 
 * se connecter et s’inscrire – le site ne doit pas être accessible à un utilisateur non connecté
 * consulter un flux contenant les derniers tickets et les commentaires des utilisateurs qu'il suit, classés par ordre chronologique, les plus récents en premier ; 
 * créer de nouveaux tickets pour demander une critique sur un livre/article ;
@@ -32,10 +33,10 @@ Un utilisateur devra pouvoir :
 * voir qui il suit et suivre qui il veut ;
 * cesser de suivre un utilisateur. 
 
-Un développeur devra pouvoir :
+*Un développeur devra pouvoir :*
 * créer un environnement local en utilisant venv, et gérer le site en se basant sur la documentation détaillée présentée dans le fichier README.md.
 
-Le site devra :
+*Le site devra :*
 * avoir une interface utilisateur correspondant à celle des wireframes ;
 * avoir une interface utilisateur propre et minimale ;
 
@@ -66,49 +67,37 @@ mkdir/LITReview
 ```
 
 * Aller dans le dossier crée:
-
-    ```bash
-cd/Litreview
+```bash
+cd/LITReview
 ```
 
-**LINUX MACOS
+**LINUX MACOS**
 * Créer votre environnement virtuel:
-
 ```bash
 python3.xx -m venv .env
 ```
-
 * Sourcer l'environnement virtuel:
-
 ```bash
 source env/bin/activate
 ```
 
 * Installer la configuration à l'aide du fichier requirements.txt:
-
 ```bash
 pip install -r requirement.txt
 ```
-
-**WINDOWS
+**WINDOWS**
 * Créer votre environnement virtuel:
-
 ```bash
 python -m venv env
 ```
-
-* Sourcer cette environnement virtuel:
-
+* Sourcer cette environnement virtuel:  
 ```bash
 source env/Scripts/activate
 ```
-
 * Installer la configuration à l'aide du fichier requirements.txt:
-
 ```bash
 pip install -r requirement.txt
 ```
-
 * Télécharger les fichiers et les dossier du repository et ajouté les dans le dossier crée.
 * Ajouter les dans le dossier LITReview
 
