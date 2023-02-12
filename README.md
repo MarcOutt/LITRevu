@@ -14,7 +14,7 @@
 ## INTRODUCTION
 ----------------
 
-Ce projet consite à créer un site Web pour la société LITRevview. Le but de l'application Web est de permettre aux utilisateurs de demander ou ûblier des critique de livres ou d'articles.  
+Ce projet consite à créer un site web pour la société LITRevview. Le but de l'application web est de permettre aux utilisateurs de demander et de publier des critiques de livres ou d'articles.  
 
 L'application présente deux cas d'utilisation principaux:  
   1.Les personnes qui demandent des critiques sur un livre ou sur un article particulier ;
@@ -22,7 +22,7 @@ L'application présente deux cas d'utilisation principaux:
   
 Cahier des charges:
 
-*Un utilisateur devra pouvoir : * 
+Un utilisateur devra pouvoir : 
 * se connecter et s’inscrire – le site ne doit pas être accessible à un utilisateur non connecté
 * consulter un flux contenant les derniers tickets et les commentaires des utilisateurs qu'il suit, classés par ordre chronologique, les plus récents en premier ; 
 * créer de nouveaux tickets pour demander une critique sur un livre/article ;
@@ -33,10 +33,10 @@ Cahier des charges:
 * voir qui il suit et suivre qui il veut ;
 * cesser de suivre un utilisateur. 
 
-*Un développeur devra pouvoir :*
+Un développeur devra pouvoir :
 * créer un environnement local en utilisant venv, et gérer le site en se basant sur la documentation détaillée présentée dans le fichier README.md.
 
-*Le site devra :*
+Le site devra :
 * avoir une interface utilisateur correspondant à celle des wireframes ;
 * avoir une interface utilisateur propre et minimale ;
 
@@ -112,18 +112,21 @@ python manage.py runserver
 
 
 Afin de tester les différentes fonctionalités du site, 3 comptes utilisateurs ont été créés : "Jean", "Severine" et "Sarah".  
-Le mot de passe est identique pour les 3 : "hello1234" (sans les guillemets).
+Le mot de passe est identique pour les 3 : hello1234  
 
-Pour acceder à l'interface d'administration: via le compte "admin", mot de passe "admin" (sans les guillemets):
+Pour acceder à l'interface d'administration::
 * Aller sur http:/127.0.0.1:8000/admin
 * Nom du compte: admin
 * Mot de passe: admin
 
 ## RAPPORT FLAKE8
 -------------------
-* Ouvrir l'invite de commande
-* Lancer votre environnement virtuel
-* Rentrer le code suivant: flake8 --exclude=.env/ --max-line-length=119 --format=html --htmldir=flake8-rapport
+* Ouvrir l'invite de commande ( se reporter à la rubrique installation)
+* Lancer votre environnement virtuel ( se reporter à la rubrique installation)
+* Rentrer le code suivant:
+```bash
+flake8 --exclude=.env/ --max-line-length=119 --format=html --htmldir=flake8-rapport
+``` 
 * Aller dans le dossier flake8-rapport
 * Ouvrir le fichier index
 
