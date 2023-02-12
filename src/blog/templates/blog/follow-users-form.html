@@ -17,21 +17,22 @@
     </form>
 
 <h2>Abonnements :</h2>
-<form method="POST">
-    {% csrf_token %}
     {% for username in following %}
+
     <table>
         <tr>
             <td class="follow-name">{{ username }} </td>
-            <td> <input type="hidden" name="username" value="{{ username }}">
-                 <button type="submit" name="action" value="unfollow" class="unfollow">Désabonner</button>   </td>
+
+            <td><form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="username" value="{{ username }}">
+                <button type="submit" name="action" value="unfollow" class="unfollow">Désabonner</button>
+            </form></td>
         </tr>
     </table>
   {% empty %}
     <p>Vous n'avez pas d'abonnement</p>
   {% endfor %}
-
-</form>
 
 <h2>Abonnés :</h2>
   {% for username in followers %}

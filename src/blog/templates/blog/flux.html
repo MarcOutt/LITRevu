@@ -21,10 +21,20 @@
                         {% else %}
                             <p>{{ review.user.username }} a créer une critique</p>
                         {% endif %}
-                        <p class="time">{{ review.time_created }} {{ ticket.time_created }}</p>
-                        <h3>{{ review.headline }}</h3>
-                        {% if review.rating %}
-                            (Note : {{ review.rating }})
+                        <p class="time">{{ review.time_created }}</p>
+                        <h3 id="title-review">{{ review.headline }} - </h3>
+                        {% if review.rating == 0 %}
+                            <p class="star">&#9734;&#9734;&#9734;&#9734;&#9734;  </p>
+                        {% elif review.rating == 1 %}
+                            <p class="star">&#x2B50&#9734;&#9734;&#9734;&#9734;  </p>
+                        {% elif review.rating == 2 %}
+                            <p class="star">&#x2B50 &#x2B50&#9734;&#9734;&#9734;</p>
+                        {% elif review.rating == 3 %}
+                            <p class="star">&#x2B50&#x2B50&#x2B50&#9734;&#9734;</p>
+                        {% elif review.rating == 4 %}
+                            <p class="star">&#x2B50&#x2B50&#x2B50&#x2B50&#&#9734;</p>
+                        {% elif review.rating == 5 %}
+                            <p class="star">&#x2B50&#x2B50&#x2B50&#x2B50&#x2B50</p>
                         {% endif %}
                         <p>{{ review.body }}</p>
                         <div class="frame-ticket">

@@ -1,18 +1,10 @@
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
-from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
-
-RATES = (
-    ("1", "1"),
-    ("2", 2),
-    ("3", 3),
-    ("4", 4),
-    ("5", 5),
-)
 
 
 class MyUserManager(BaseUserManager):
+    """Gestionnaire d'utilisateur personnalisé"""
     def create_user(self, username, password=None):
         if not username:
             raise ValueError("Vous devez entrer un pseudo")
@@ -30,6 +22,7 @@ class MyUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser):
+    """Modèle pour créer des utilisateurs"""
     username = models.CharField(max_length=63, unique=True, blank=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -47,6 +40,7 @@ class CustomUser(AbstractBaseUser):
 
 
 class Ticket(models.Model):
+    """Modèle pour la création d'un ticket et à une relation avec le CustomUser """
     title = models.CharField(max_length=128)
     description = models.TextField(max_length=2048, blank=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -55,6 +49,7 @@ class Ticket(models.Model):
 
 
 class UsersFollows(models.Model):
+    """Permet de créer une relation de plusieurs à plusieurs entre les instances de CustomUser"""
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='following')
     followed_user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='followed_by')
 
@@ -63,8 +58,9 @@ class UsersFollows(models.Model):
 
 
 class Review(models.Model):
+    """Modèle pour créer une review avec une relation de ForeignKey avec CustomUser et une autre avec Ticket"""
     ticket = models.ForeignKey(to=Ticket, on_delete=models.CASCADE, related_name='review')
-    rating = models.PositiveSmallIntegerField(verbose_name="Note", choices=RATES, blank=True, null=True)
+    rating = models.PositiveSmallIntegerField(verbose_name="Note", blank=True, null=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     headline = models.CharField(max_length=128, verbose_name="Titre")
     body = models.TextField(max_length=8192, verbose_name="Commentaire")

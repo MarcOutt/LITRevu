@@ -25,9 +25,9 @@
         <div class="image">
              <label>Image</label>
              {{ ticket_form.image }}
-            {% if ticket_form.image %}
-                <img src="{{ ticket_form.image.url }}">
-            {% endif %}
+             {% if image == ""%}
+                <img src="{{ image }}">
+             {% endif %}
         </div>
 
          {% if review_form %}

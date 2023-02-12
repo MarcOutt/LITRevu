@@ -12,41 +12,40 @@
     {% endif %}
     <div class="frame">
         <p>Livre / Article</p>
-     <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="title">
-            <label>Titre</label>
-            {{ ticket_form.title}}
-        </div>
-        <div class="description">
-           <label>Description</label>
-            {{ ticket_form.description }}
-        </div>
-        <div class="image">
-             <label>Image</label>
-             {{ ticket_form.image }}
-            {% if ticket.image %}
-                    <img src="{{ ticket.image.url }}">
-            {% endif %}
-        </div>
-        <hr>
-         <p>Critique</p>
-         <div class="title">
-             <label>Titre</label>
-             {{review_form.headline}}
-         </div>
-         <div class="rates">
-             <label id="title-rates">Note</label>
-             {{ review_form.rating }}
-         </div>
-         <div class="description">
-           <label>Description</label>
-           {{ review_form.body }}
-         </div>
-         <div class="button-create">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="title">
+                <label>Titre</label>
+                {{ ticket_form.title}}
+            </div>
+            <div class="description">
+               <label>Description</label>
+                {{ ticket_form.description }}
+            </div>
+            <div class="image">
+                 <label>Image</label>
+                 {{ ticket_form.image }}
+                <img src="{{ ticket.image.url }}">
+            </div>
+            <hr>
+             <p>Critique</p>
+             <div class="title">
+                 <label>Titre</label>
+                 {{review_form.headline}}
+             </div>
+             <div class="rates">
+                 <label id="title-rates">Note</label>
+
+                 {{ review_form.rating }}
+             </div>
+             <div class="description">
+               <label>Description</label>
+               {{ review_form.body }}
+             </div>
+            <div id="id_button">
              <button type="submit" >Envoyer</button>
-         </div>
-    </form>
+             </div>
+        </form>
     </div>
 
 {% endblock %}

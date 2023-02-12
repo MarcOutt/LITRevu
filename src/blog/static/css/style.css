@@ -68,7 +68,7 @@ textarea {
 display: flex;
     width: 100%;
     height: 200px;
-    margin-top: 15px
+    margin-top: 15px;
 }
 
 /* Barre de navigation */
@@ -167,7 +167,6 @@ li {
     margin-bottom: 10px;
 }
 
-
 /* flux */
 .flux {
     margin-right: auto;
@@ -203,7 +202,12 @@ p.time {
     padding: 0;
 }
 
-h3 {
+p.star {
+    display: inline-block;
+}
+
+#title-review {
+    display : inline-block;
     margin: 10px 1px;
 }
 
@@ -218,6 +222,20 @@ h3 {
     padding: 15px;
 }
 
+
+
+/* posts */
+#title-posts{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#button-posts {
+    text-align: right;
+}
+
 #edit, #delete{
     font-size : 20px;
     display: inline-block;
@@ -229,7 +247,6 @@ h3 {
     margin: 30px;
     padding: 15px;
 }
-
 /* ticket-create */
 
 .title, .description {
@@ -255,7 +272,14 @@ h3 {
 .button-create button {
     float: right;
 }
+#id_image {
+    font-size: 20px;
+}
 
+input#file-upload-button {
+color: white;
+    background-color: black;
+}
 /* review-create */
 
 .rates label {
@@ -267,16 +291,44 @@ h3 {
     margin-left: 47px;
     width: 100%;
 }
-input[type="radio"] {
-  display: inline-block;
-  height: 10px;
-  padding-top: 40px;
+
+ul#id_rating {
+    display: flex;
+    margin-left: 35px;
 }
 
-#radio {
-    margin-left: 60px;
+#id_rating li {
+    width: 75px;
+    margin: 30px;
 }
 
+#id_rating label {
+    display: flex;
+    font-size: 20px;
+    width: 30px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+
+    }
+
+#id_rating input {
+    height: 20px;
+    margin-top: 0;
+    margin-right: 10px;
+    padding: 0;
+}
+
+#id_body {
+    margin-bottom: 30px;
+}
+
+#id_button {
+    text-align: right;
+    margin-right: 35px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
 /* ticket-delete */
 
 .delete {
