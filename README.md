@@ -14,16 +14,16 @@
 ## INTRODUCTION
 ----------------
 
-Ce projet consite à créer un site web pour la société LITRevview. Le but de l'application web est de permettre aux utilisateurs de demander et de publier des critiques de livres ou d'articles.  
+Ce projet consite à créer un site web pour la société LITRevview. Le but de l'application web est de permettre aux utilisateurs de demander et de publier des critiques. de livres ou d'articles.  
 
 L'application présente deux cas d'utilisation principaux:  
-  1.Les personnes qui demandent des critiques sur un livre ou sur un article particulier ;
-  2.Les personnes qui recherchent des articles et des livres intéressants à lire, en se basant sur les critiques des autres.
+  1.Les personnes qui demandent des critiques sur un livre ou sur un article particulier ;  
+  2.Les personnes qui recherchent des articles et des livres intéressants à lire, en se basant sur les critiques des autres.  
   
 Cahier des charges:
 
 Un utilisateur devra pouvoir : 
-* se connecter et s’inscrire – le site ne doit pas être accessible à un utilisateur non connecté
+* se connecter et s’inscrire – le site ne doit pas être accessible à un utilisateur non connecté;
 * consulter un flux contenant les derniers tickets et les commentaires des utilisateurs qu'il suit, classés par ordre chronologique, les plus récents en premier ; 
 * créer de nouveaux tickets pour demander une critique sur un livre/article ;
 * créer des critiques en réponse à des tickets ;
