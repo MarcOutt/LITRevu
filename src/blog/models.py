@@ -60,7 +60,7 @@ class UsersFollows(models.Model):
 class Review(models.Model):
     """Modèle pour créer une review avec une relation de ForeignKey avec CustomUser et une autre avec Ticket"""
     ticket = models.ForeignKey(to=Ticket, on_delete=models.CASCADE, related_name='review')
-    rating = models.PositiveSmallIntegerField(verbose_name="Note", blank=True, null=True)
+    rating = models.PositiveSmallIntegerField(verbose_name="Note")
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     headline = models.CharField(max_length=128, verbose_name="Titre")
     body = models.TextField(max_length=8192, verbose_name="Commentaire")

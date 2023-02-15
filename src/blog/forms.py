@@ -21,13 +21,16 @@ class SignupForm(UserCreationForm):
                    }
 
 
+class CustomClearableFileInput(ClearableFileInput):
+    template_name = 'blog/custom_clearable_file_input.html'
+
+
 class TicketForm(forms.ModelForm):
+
     class Meta:
         model = models.Ticket
         fields = ['title', 'description', 'image']
-        widgets = {
-            'image': ClearableFileInput(attrs={'placeholder': 'Choisir une image...'}),
-        }
+        widgets = {'image': CustomClearableFileInput()}
 
 
 class ReviewForm(forms.ModelForm):

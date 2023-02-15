@@ -30,7 +30,9 @@ h2 {
 img {
     display: block;
     margin-left : 10px;
-    width:40%;
+    width:30%;
+    height: 30%;
+    margin-bottom: 10px;
 }
 
 a {
@@ -222,7 +224,11 @@ p.star {
     padding: 15px;
 }
 
-
+#response {
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
 
 /* posts */
 #title-posts{
@@ -247,6 +253,22 @@ p.star {
     margin: 30px;
     padding: 15px;
 }
+/* ticket and review update */
+div.image {
+    margin-top: 25px;
+}
+
+.image-update {
+    width: 20%;
+    margin: 38px;
+}
+
+div.rates {
+    margin-bottom: 20px;
+    margin: 0px;
+    padding: 0;
+}
+
 /* ticket-create */
 
 .title, .description {
@@ -328,6 +350,29 @@ ul#id_rating {
     margin-right: 35px;
     margin-top: 0;
     margin-bottom: 30px;
+}
+
+/* ticket-response */
+.update {
+    margin: 20px 100px 40px 100px;
+}
+
+.update h1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.button-update{
+    text-align : right;
+}
+
+.button-update button {
+    margin: 30px 35px;
+}
+
+#image-response {
+    width: 20%;
+    margin-left: 30px;
 }
 /* ticket-delete */
 

@@ -32,7 +32,7 @@
                         {% elif review.rating == 3 %}
                             <p class="star">&#x2B50&#x2B50&#x2B50&#9734;&#9734;</p>
                         {% elif review.rating == 4 %}
-                            <p class="star">&#x2B50&#x2B50&#x2B50&#x2B50&#&#9734;</p>
+                            <p class="star">&#x2B50&#x2B50&#x2B50&#x2B50&#9734;</p>
                         {% elif review.rating == 5 %}
                             <p class="star">&#x2B50&#x2B50&#x2B50&#x2B50&#x2B50</p>
                         {% endif %}
@@ -58,7 +58,12 @@
                         <img src="{{ ticket.image.url }}" alt="{{ ticket.title }}">
                     {% endif %}
                     {% if request.user.username != ticket.user.username %}
-                        <button class="response"><a href="{% url 'ticket-response' ticket.id %}">Créer une critique</a></button>
+                        <div id="response">
+                            <button >
+                                <a href="{% url 'ticket-response' ticket.id %}">Créer une critique
+                            </a></button>
+                        </div>
+
                     {% endif %}
                 {% endif %}
             </div>

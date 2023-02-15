@@ -8,13 +8,13 @@
 <h1>Créer une critique</h1>
 <div class="frame">
     <p>Vous êtes en train de poster en réponse à  </p>
-        <div class="frame">
+        <div class="frame update">
             <p>{{ ticket.user.username }} à demander une critique </p>
             <p class="time">{{ ticket.time_created }}</p>
                     <h1>{{ ticket.title }}</h1>
                     <p>{{ ticket.description }}</p>
                     {% if ticket.image %}
-                    <img src="{{ ticket.image.url }}" alt="{{ ticket.title }}">
+                    <img id="image-response" src="{{ ticket.image.url }}" alt="{{ ticket.title }}">
                     {% endif %}
         </div>
                 <hr>
@@ -33,7 +33,7 @@
            <label>Description</label>
            {{ review_form.body }}
          </div>
-         <div class="button-create">
+         <div class="button-update">
              <button type="submit" >Envoyer</button>
          </div>
             </form>

@@ -8,15 +8,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic import CreateView, DeleteView
-
-
-@login_required
-def logout_user(request):
-    """Permet la déconnexion de l'utilisateur"""
-    logout(request)
-    return redirect('login')
 
 
 class LoginPageView(View):
@@ -43,7 +37,6 @@ class LoginPageView(View):
         return render(request, self.template_name, context={'form': form, 'message': message, 'user': user})
 
 
-@login_required
 class SignupPageView(View):
     """Permet l'affichage de la page pour la création d'un compte"""
     def get(self, request):
@@ -62,7 +55,7 @@ class SignupPageView(View):
         return redirect(settings.LOGIN_REDIRECT_URL)
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class FluxView(View):
     """Permet d'afficher la page flux avec l'affichage de son flux"""
     template_name = 'blog/flux.html'
@@ -84,22 +77,25 @@ class FluxView(View):
         return render(request, self.template_name, context={'tickets': tickets_sorted})
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class PostsView(View):
     """Permet l'affichage de la page post avec tous les posts de l'utilisateur pour les modifier et les supprimer"""
     template_name = 'blog/posts.html'
 
     def get(self, request):
         tickets = models.Ticket.objects.filter(user_id=request.user)
+        reviews = models.Review.objects.filter(user_id=request.user)
+        ticket_response = [review.ticket for review in reviews if review.user != review.ticket.user]
+        tickets = list(chain(tickets, ticket_response))
         for ticket in tickets:
-            review = ticket.review.first()
-            if review is not None:
+            if ticket.review.first() is not None:
+                review = ticket.review.first()
                 ticket.time_created = review.time_created
         tickets_sorted = sorted(tickets, key=lambda post: post.time_created, reverse=True)
         return render(request, self.template_name, context={'tickets': tickets_sorted})
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class TicketCreateView(CreateView):
     """Permet d'afficher le formulaire pour créer un ticket"""
     model = models.Ticket
@@ -122,7 +118,7 @@ class TicketCreateView(CreateView):
         return render(request, self.template_name, context=context)
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class TicketUpdateView(View):
     """Permet l'affichage d'un formulaire pour un ticket et une review afin de les modifier"""
     template_name = 'blog/review-update.html'
@@ -132,10 +128,7 @@ class TicketUpdateView(View):
 
     def get(self, request, ticket_id):
         ticket = models.Ticket.objects.get(id=ticket_id)
-        image = ""
-        if ticket.image:
-            print('image')
-            image = ticket.image.url
+        image = ticket.image.url if ticket.image else ""
         review = ticket.review.first()
         if ticket.user == request.user:
             ticket = self.form_class(instance=ticket)
@@ -165,7 +158,7 @@ class TicketUpdateView(View):
         return render(request, self.template_name, {'ticket': ticket, 'review_form': review})
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class TicketDeleteView(DeleteView):
     """Permet de supprimer les tickets"""
     model = models.Ticket
@@ -175,7 +168,7 @@ class TicketDeleteView(DeleteView):
     success_url = reverse_lazy("posts")
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class ReviewDeleteView(DeleteView):
     """Permets de supprimer les reviews"""
     model = models.Ticket
@@ -185,7 +178,7 @@ class ReviewDeleteView(DeleteView):
     success_url = reverse_lazy("posts")
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class ReviewCreateView(CreateView):
     """Permet d'afficher le formulaire pour créer un ticket et une review"""
     form_class = forms.TicketForm
@@ -216,7 +209,7 @@ class ReviewCreateView(CreateView):
         return render(request, self.template_name, context=context)
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class FollowUsersView(View):
     """Permet d'afficher la page des abonnements, de suivre, de supprimer des utilisateurs qu'in suit et de voir
      les personnes qui nous suit."""
@@ -247,7 +240,7 @@ class FollowUsersView(View):
         return redirect(self.success_url)
 
 
-@login_required
+@method_decorator(login_required, name='dispatch')
 class TicketResponseView(View):
     """Permet de répondre à un ticket"""
     template_name = 'blog/ticket-response.html'
@@ -272,3 +265,11 @@ class TicketResponseView(View):
             return redirect(self.success_url)
         return render(request, self.template_name, {'ticket': ticket, 'review_form': review_form})
 
+
+@method_decorator(login_required, name='dispatch')
+class LogoutUserView(View):
+    """Permet la déconnexion de l'utilisateur"""
+
+    def get(self, request):
+        logout(request)
+        return redirect('login')
