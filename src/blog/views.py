@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views import View
-from django.views.generic import CreateView, DeleteView
+from django.views.generic import CreateView
 
 
 class LoginPageView(View):
@@ -159,23 +159,23 @@ class TicketUpdateView(View):
 
 
 @method_decorator(login_required, name='dispatch')
-class TicketDeleteView(DeleteView):
+class TicketDeleteView(View):
     """Permet de supprimer les tickets"""
-    model = models.Ticket
     template_name = 'blog/ticket-delete.html'
-    context_object_name = "ticket"
-    form_class = forms.TicketForm
-    success_url = reverse_lazy("posts")
+    success_url = reverse_lazy('posts')
 
+    def get(self, request, ticket_id):
+        ticket = models.Ticket.objects.get(id=ticket_id)
+        review = ticket.review.first()
+        return render(request, self.template_name, {'ticket': ticket, 'review': review})
 
-@method_decorator(login_required, name='dispatch')
-class ReviewDeleteView(DeleteView):
-    """Permets de supprimer les reviews"""
-    model = models.Ticket
-    template_name = 'blog/review-delete.html'
-    context_object_name = "review"
-    form_class = forms.ReviewForm
-    success_url = reverse_lazy("posts")
+    def post(self, request, ticket_id):
+        ticket = models.Ticket.objects.get(id=ticket_id)
+        if ticket.user == request.user:
+            ticket.delete()
+        elif ticket.review.exists():
+            ticket.review.first().delete()
+        return redirect(self.success_url)
 
 
 @method_decorator(login_required, name='dispatch')
