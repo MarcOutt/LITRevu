@@ -56,13 +56,12 @@ Le projet utilise les langages HTML, CSS et Python.
     Ouvrir l'invite de commande : ```Ctrl + Alt + T```
 * Il est préférable d'utiliser un environnement virtuel, pour l'installer:
 
-    ```bash
+```bash
 pip install venv
 ```
 
 * Créer un dossier au nom de l'application avec mkdir
-
-    ```bash
+```bash
 mkdir/LITReview
 ```
 
@@ -98,7 +97,7 @@ source env/Scripts/activate
 ```bash
 pip install -r requirement.txt
 ```
-* Télécharger les fichiers et les dossier du repository et ajouté les dans le dossier crée.
+* Télécharger les fichiers et les dossier du repository.
 * Ajouter les dans le dossier LITReview
 
 
@@ -108,13 +107,13 @@ pip install -r requirement.txt
 ```bash
 python manage.py runserver
 ```
-* Entrer l'adresse suivante dans votre navigateur pour acceder au site : http:/127.0.0.1:8000/
+* Entrer l'adresse suivante dans votre navigateur pour accéder au site : http:/127.0.0.1:8000/
 
 
 Afin de tester les différentes fonctionalités du site, 3 comptes utilisateurs ont été créés : "Jean", "Severine" et "Sarah".  
 Le mot de passe est identique pour les 3 : hello1234  
 
-Pour acceder à l'interface d'administration::
+Pour accéder à l'interface d'administration::
 * Aller sur http:/127.0.0.1:8000/admin
 * Nom du compte: admin
 * Mot de passe: admin
