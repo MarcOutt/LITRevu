@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Créer une critique</title>
+{% endblock %}
+
+{% block content %}
+<h1>Créer une critique</h1>
+<div class="frame">
+    <p>Vous êtes en train de poster en réponse à  </p>
+        <div class="frame update">
+            <p>{{ ticket.user.username }} à demander une critique </p>
+            <p class="time">{{ ticket.time_created }}</p>
+                    <h1>{{ ticket.title }}</h1>
+                    <p>{{ ticket.description }}</p>
+                    {% if ticket.image %}
+                    <img id="image-response" src="{{ ticket.image.url }}" alt="{{ ticket.title }}">
+                    {% endif %}
+        </div>
+                <hr>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>Critique</p>
+         <div class="title">
+             <label>Titre</label>
+             {{review_form.headline}}
+         </div>
+         <div class="rates">
+             <label id="title-rates">Note</label>
+             {{ review_form.rating }}
+         </div>
+         <div class="description">
+           <label>Description</label>
+           {{ review_form.body }}
+         </div>
+         <div class="button-update">
+             <button type="submit" >Envoyer</button>
+         </div>
+            </form>
+</div>
+
+
+{% endblock %}
+
+
