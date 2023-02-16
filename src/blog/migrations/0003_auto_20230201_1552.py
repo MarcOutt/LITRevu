@@ -13,6 +13,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='review',
             name='rating',
-            field=models.PositiveSmallIntegerField(blank=True, choices=[('1', '1'), ('2', 2), ('3', 3), ('4', 4), ('5', 5)], null=True, verbose_name='Note'),
+            field=models.PositiveSmallIntegerField(blank=True, choices=[('1', '1'), ('2', 2), ('3', 3), ('4', 4),
+                                                                        ('5', 5)], null=True, verbose_name='Note'),
         ),
     ]

@@ -48,7 +48,8 @@ class Migration(migrations.Migration):
                 ('headline', models.CharField(max_length=128, verbose_name='Titre')),
                 ('body', models.TextField(max_length=8192, verbose_name='Commentaire')),
                 ('time_created', models.DateTimeField(auto_now_add=True)),
-                ('ticket', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='review', to='blog.ticket')),
+                ('ticket', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='review',
+                                             to='blog.ticket')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
@@ -56,8 +57,10 @@ class Migration(migrations.Migration):
             name='UsersFollows',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('followed_user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='followed_by', to=settings.AUTH_USER_MODEL)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='following', to=settings.AUTH_USER_MODEL)),
+                ('followed_user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                                    related_name='followed_by', to=settings.AUTH_USER_MODEL)),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='following',
+                                           to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'unique_together': {('user', 'followed_user')},
