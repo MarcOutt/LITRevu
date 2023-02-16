@@ -14,7 +14,7 @@
 ## INTRODUCTION
 ----------------
 
-Ce projet consite à créer un site web pour la société LITRevview. Le but de l'application web est de permettre aux utilisateurs de demander et de publier des critiques. de livres ou d'articles.  
+Ce projet consite à créer un site web pour la société LITRevview. Le but de l'application web est de permettre aux utilisateurs de demander et de publier des critiques de livres ou d'articles.  
 
 L'application présente deux cas d'utilisation principaux:  
   1.Les personnes qui demandent des critiques sur un livre ou sur un article particulier ;  
