@@ -46,7 +46,7 @@ Le projet utilise les langages HTML, CSS et Python.
 ## INSTALLATION
 ------------------
 
-* Télécharger python 3 (https://www.python.org/downloads/)
+* Télécharger python 3.7 (https://www.python.org/downloads/)
 * Installer python 3 
 * Sous Window:
     Ouvrir l'invite de commande : ``` touche windows + r``` et entrez ```cmd```
@@ -54,8 +54,12 @@ Le projet utilise les langages HTML, CSS et Python.
     Ouvrir l'invite de commande : ```touche command + espace``` et entrez ```terminal```
 * Sous Linux:
     Ouvrir l'invite de commande : ```Ctrl + Alt + T```
-* Il est préférable d'utiliser un environnement virtuel, pour l'installer:
+* Mettre pip en version 21.3.1
+```bash
+python -m pip install --upgrade pip 21.3.1
+```
 
+* Il est préférable d'utiliser un environnement virtuel, pour l'installer:  
 ```bash
 pip install venv
 ```
