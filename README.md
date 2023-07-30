@@ -1,49 +1,50 @@
-# DEVELOPPER UNE APPLICATION WEB EN UTILISANT DJANGO / OC_p9
----------------------------------------------------------------
+[![Flake8 Python Linter](https://img.shields.io/badge/linter-flake8-blue)](https://flake8.pycqa.org/)
+[![HTML Linted](https://img.shields.io/badge/linted-HTML-green)](https://validator.w3.org/)
+[![CSS Linted](https://img.shields.io/badge/linted-CSS-green)](https://csslint.net/)
 
+# LITRevu - Application Web pour Critiques de Livres et d'Articles
 
-## TABLE DES MATIERES
----------------------
+![LITRevu Banner](url_vers_l'image)
 
-* Introduction
-* Installation
-* Utilisation
-* Rapport Flake8
+## Table des matières
+- [Introduction](#introduction)
+- [Cahier des charges](#cahier-des-charges)
+- [Installation](#installation)
+- [Technologie](#technologie)
+- [Utilisation](#utilisation)
+- [Rapport Flake8](#rapport-flake8)
+- [Wireframes](#wireframes)
 
+## Introduction
 
-## INTRODUCTION
-----------------
+Ce projet consiste à créer un site web pour la société LITRevview. Le but de l'application web est de permettre aux utilisateurs de demander et de publier des critiques de livres ou d'articles. L'application présente deux cas d'utilisation principaux :
 
-Ce projet consite à créer un site web pour la société LITRevview. Le but de l'application web est de permettre aux utilisateurs de demander et de publier des critiques de livres ou d'articles.  
+1. Les personnes qui demandent des critiques sur un livre ou sur un article particulier.
+2. Les personnes qui recherchent des articles et des livres intéressants à lire, en se basant sur les critiques des autres.
 
-L'application présente deux cas d'utilisation principaux:  
-  1.Les personnes qui demandent des critiques sur un livre ou sur un article particulier ;  
-  2.Les personnes qui recherchent des articles et des livres intéressants à lire, en se basant sur les critiques des autres.  
-  
-Cahier des charges:
+## Cahier des charges :
+
+L'objectif de l'application LITRevu est de permettre aux utilisateurs de demander et de publier des critiques de livres ou d'articles. Voici les fonctionnalités principales attendues :
 
 Un utilisateur devra pouvoir : 
-* se connecter et s’inscrire – le site ne doit pas être accessible à un utilisateur non connecté;
+* se connecter et s’inscrire – le site ne doit pas être accessible à un utilisateur non connecté ;
 * consulter un flux contenant les derniers tickets et les commentaires des utilisateurs qu'il suit, classés par ordre chronologique, les plus récents en premier ; 
 * créer de nouveaux tickets pour demander une critique sur un livre/article ;
 * créer des critiques en réponse à des tickets ;
-* créer des critiques qui ne sont pas en réponse à un ticket. Dans le cadre d'un processus en une étape, l'utilisateur créera un ticket puis un commentaire en réponse à son propre ticket;
+* créer des critiques qui ne sont pas en réponse à un ticket. Dans le cadre d'un processus en une étape, l'utilisateur créera un ticket puis un commentaire en réponse à son propre ticket ;
 * voir, modifier et supprimer ses propres tickets et commentaires ; 
 * suivre les autres utilisateurs en entrant leur nom d'utilisateur ;
 * voir qui il suit et suivre qui il veut ;
-* cesser de suivre un utilisateur. 
+* cesser de suivre un utilisateur.
 
 Un développeur devra pouvoir :
 * créer un environnement local en utilisant venv, et gérer le site en se basant sur la documentation détaillée présentée dans le fichier README.md.
 
 Le site devra :
 * avoir une interface utilisateur correspondant à celle des wireframes ;
-* avoir une interface utilisateur propre et minimale ;
+* avoir une interface utilisateur propre et minimale.
 
-Le projet utilise les langages HTML, CSS et Python.
-
-
-## INSTALLATION
+## Installation
 ------------------
 
 * Télécharger python 3.7 (https://www.python.org/downloads/)
@@ -104,6 +105,12 @@ pip install -r requirement.txt
 * Télécharger les fichiers et les dossier du repository.
 * Ajouter les dans le dossier LITReview
 
+## Technologie
+
+- **Framework :** Django
+- **Base de données :** SQLite (fichier db.sqlite3 inclus)
+- **Langage :** Python 3.7
+- **Front-end :** HTML, CSS, JavaScript
 
 ## Utilisation 
 
