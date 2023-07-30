@@ -1,6 +1,8 @@
-[![Flake8 Python Linter](https://img.shields.io/badge/linter-flake8-blue)](https://flake8.pycqa.org/)
-[![HTML Linted](https://img.shields.io/badge/linted-HTML-green)](https://validator.w3.org/)
-[![CSS Linted](https://img.shields.io/badge/linted-CSS-green)](https://csslint.net/)
+![Python](https://img.shields.io/badge/language-Python-blue)
+![Django](https://img.shields.io/badge/framework-Django-blue)
+![HTMLHint](https://img.shields.io/badge/linter-HTMLHint-blue)
+![stylelint](https://img.shields.io/badge/linter-stylelint-blue)
+![Flake8](https://img.shields.io/badge/linter-Flake8-blue)
 
 # LITRevu - Application Web pour Critiques de Livres et d'Articles
 
