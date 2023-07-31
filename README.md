@@ -6,8 +6,6 @@
 
 # LITRevu - Application Web pour Critiques de Livres et d'Articles
 
-![LITRevu Banner](url_vers_l'image)
-
 ## Table des matières
 - [Introduction](#introduction)
 - [Cahier des charges](#cahier-des-charges)
