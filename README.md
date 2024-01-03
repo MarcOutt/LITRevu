@@ -1,8 +1,6 @@
-![Python](https://img.shields.io/badge/language-Python-blue)
-![Django](https://img.shields.io/badge/framework-Django-blue)
-![HTMLHint](https://img.shields.io/badge/linter-HTMLHint-blue)
-![stylelint](https://img.shields.io/badge/linter-stylelint-blue)
-![Flake8](https://img.shields.io/badge/linter-Flake8-blue)
+![image](https://github.com/MarcOutt/OC_p10/assets/112987151/2a0b87b9-46d3-4135-a890-e8b52cd4c8ee)
+![image](https://github.com/MarcOutt/OC_p10/assets/112987151/ddc0679e-fabc-4655-804b-351da4c3433c)
+![image](https://github.com/MarcOutt/OC_p12/assets/112987151/c4f736d8-40a8-460f-a86f-886034772ce4)
 
 # LITRevu - Application Web pour Critiques de Livres et d'Articles
 
