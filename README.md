@@ -1,6 +1,10 @@
-![image](https://github.com/MarcOutt/OC_p10/assets/112987151/2a0b87b9-46d3-4135-a890-e8b52cd4c8ee)
-![image](https://github.com/MarcOutt/OC_p10/assets/112987151/ddc0679e-fabc-4655-804b-351da4c3433c)
-![image](https://github.com/MarcOutt/OC_p12/assets/112987151/c4f736d8-40a8-460f-a86f-886034772ce4)
+
+[![Django](https://img.shields.io/badge/Django-3.2.8-green.svg)](https://www.djangoproject.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-3.36.0-blue.svg)](https://www.sqlite.org/)
+[![Python](https://img.shields.io/badge/Python-3.7-yellow.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-orange.svg)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS-3-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 # LITRevu - Application Web pour Critiques de Livres et d'Articles
 
